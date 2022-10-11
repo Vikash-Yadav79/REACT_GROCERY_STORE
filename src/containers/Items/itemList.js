@@ -7,16 +7,9 @@ function itemList(props) {
       {props.data?.map((elem) => {
         return (
           <div key={elem.id}>
-          <Item
-            item={elem}
-            setTotalItem= {props.setTotalItem}
-            // addToCart={() => props.addToCart()}
-            // cart={true}
-            // key={elem.id}
-          />
-           </div>
+            <Item item={elem} setTotalItem={props.setTotalItem} />
+          </div>
         );
-       
       })}
     </div>
   );

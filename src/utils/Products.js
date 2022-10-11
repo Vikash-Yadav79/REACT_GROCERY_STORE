@@ -3,54 +3,54 @@ const stores = {
     {
       id: 1,
       type: "filpkart",
-      name: "fragrance",
+      name: "bag",
       description:
-        "fragrance is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The fragrance company was acquired by Nestlé in 1947",
+        "fragrance is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 32,
-      img: "https://www.bigbasket.com/media/uploads/p/l/40081046_6-godrej-aer-power-pocket-bathroom-air-fragrance-assorted.jpg",
+      img: "https://rukminim1.flixcart.com/image/832/832/l27wtjk0/backpack/p/g/j/daypack-bags-2-compartment-backpack-for-daily-use-library-office-original-imagdm57hqvc5tny.jpeg?q=70",
     },
     {
       id: 2,
       type: "filpkart",
-      name: "napkin",
+      name: "Bottle",
       description:
-        "Napkin is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The napkin company was acquired by Nestlé in 1947",
+        "Napkin is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 10,
-      img: "https://www.bigbasket.com/media/uploads/p/l/100312960_2-origami-klassic-plain-cocktail-napkins-22-x-22-cm.jpg",
+      img: "https://images.unsplash.com/photo-1591704951890-0862b2e98acb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ym90dGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
     },
     {
       id: 3,
       type: "filpkart",
-      name: "Eggs",
+      name: "pillow",
       description:
-        "eggs is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The eggs company was acquired by Nestlé in 1947",
+        "eggs is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 50,
-      img: "https://www.bigbasket.com/media/uploads/p/l/1203477_2-fresho-eggs-regular.jpg",
+      img: "https://media.istockphoto.com/photos/white-blank-pillowcase-mockup-grey-background-picture-id1175946959?k=20&m=1175946959&s=612x612&w=0&h=nfEJX-43RXF44frHESkyn2xpm6K1MLRJ-3N8KJGPjIg=",
     },
     {
       id: 4,
       type: "filpkart",
-      name: "Noodles",
+      name: "Nuts",
       description:
-        "Noodles is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Noodles company was acquired by Nestlé in 1947",
+        "Noodles is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 25,
-      img: "https://www.bigbasket.com/media/uploads/p/l/20004318_6-wai-wai-ready-to-eat-noodles-chicken.jpg",
+      img: "https://c.ndtvimg.com/2019-12/qng1ujko_nuts_625x300_27_December_19.jpg",
     },
     {
       id: 5,
       type: "filpkart",
-      name: "Poha",
+      name: "Lays",
       description:
-        "Poha is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Poha company was acquired by Nestlé in 1947",
+        "Poha is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 40,
-      img: "https://www.bigbasket.com/media/uploads/p/l/40220133_1-tata-sampann-white-thick-poha-high-in-fibre.jpg",
+      img: "https://i0.wp.com/www.inventiva.co.in/wp-content/uploads/2021/12/pepsico-lays-down-arms-against-farmers.jpg",
     },
     {
       id: 6,
       type: "filpkart",
       name: "Soya sause",
       description:
-        "Soya is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Soya company was acquired by Nestlé in 1947",
+        "Soya is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 32,
       img: "https://www.bigbasket.com/media/uploads/p/l/20006016_2-chings-secret-dark-soy-sauce.jpg",
     },
@@ -59,25 +59,25 @@ const stores = {
       type: "filpkart",
       name: "Amul Mithai",
       description:
-        "Amul is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Amul company was acquired by Nestlé in 1947",
+        "Amul is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. ",
       price: 200,
-      img: "https://www.bigbasket.com/media/uploads/p/l/228529_5-amul-mithai-mate-sweetened-condensed-milk.jpg",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHP91nR69Gg_J1Naf2bA2hEyDDfDcLkJ14Ww&usqp=CAU",
     },
     { 
     id: 8,
       type: "filpkart",
       name: "paneer",
       description:
-        "paneer is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Soya company was acquired by Nestlé in 1947",
+        "paneer is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 50,
-      img: "https://www.bigbasket.com/media/uploads/p/l/30000337_4-amul-malai-paneer.jpg",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUPUTC8GRDVxEC7q07mB9fwKWHQw33Tyjc5Q&usqp=CAU",
     }, 
     {
       id: 9,
       type: "filpkart",
       name: "Curd",
       description:
-        "curd is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Soya company was acquired by Nestlé in 1947",
+        "curd is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 32,
       img: "https://www.bigbasket.com/media/uploads/p/l/1200180_4-milky-mist-curd-farm-fresh.jpg",
     }, 
@@ -86,7 +86,7 @@ const stores = {
       type: "filpkart",
       name: "Bath",
       description:
-        "Bath is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Soya company was acquired by Nestlé in 1947",
+        "Bath is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. ",
       price: 5,
       img: "https://www.bigbasket.com/media/uploads/p/l/263918_7-medimix-bathing-soap-ayurvedic-classic-18-herbs.jpg",
     }, 
@@ -98,18 +98,18 @@ const stores = {
       type: "amazon",
       name: "chocolte",
       description:
-        "cadbury is one an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The cadbury company was acquired by Nestlé in 1947",
+        "cadbury is one an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 10,
-      img: "https://www.bigbasket.com/media/uploads/p/l/1219026_5-cadbury-choc-layered-cakes-family-pack126-g-choc-filled-cookies-family-pack-150-g.jpg",
+      img: "https://img01.aws.kooomo-cloud.com/upload/637/cms/667765/en/241982/Dark-Chocolate-Web-Image.jpg?v=16",
     },
     {
       id: 12,
       type: "amazon",
-      name: "ponds",
+      name: "Ball_pen",
       description:
-        "Ponds is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Thumbs up company was acquired by Nestlé in 1947",
+        "Pen is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 20,
-      img: 'https://www.bigbasket.com/media/uploads/p/l/266854_7-ponds-dreamflower-fragrant-talc.jpg'
+      img: 'https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVufGVufDB8fDB8fA%3D%3D&w=1000&q=80'
     },
    
     {
@@ -117,70 +117,70 @@ const stores = {
       type: "amazon",
       name: "thumb-up",
       description:
-        "Thumbs-up is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Thumbs up company was acquired by Nestlé in 1947",
+        "Thumbs-up is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 10,
-      img: 'https://www.bigbasket.com/media/uploads/p/l/251014_12-thums-up-soft-drink.jpg'
+      img: 'https://us.123rf.com/450wm/monticello/monticello1701/monticello170100307/70406028-poznan-poland-jan-19-2017-flagship-products-of-coca-cola-company-american-multinational-beverage-cor.jpg?ver=6'
     },
     {
       id: 14,
       type: "amazon",
       name: "Santizier",
       description:
-        "Santizier is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Maggi company was acquired by Nestlé in 1947",
+        "Santizier is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 40,
-      img: "https://www.bigbasket.com/media/uploads/p/l/270177_11-dettol-instant-hand-sanitizer-liquid-gel-original-kills-germs-alcohol-based-non-sticky.jpg"
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlTW3G0QrzkQoezAXfb-o4CaMX1uVOq8eMcHi1eDTKYeQ07eYGlB6kubgoH4tfq1mXzMw&usqp=CAU"
     },
     {
       id: 15,
       type: "amazon",
       name: "Sugar",
       description:
-        "Sugar is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Sugar company was acquired by Nestlé in 1947",
+        "Sugar is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 20,
-      img: "https://www.bigbasket.com/media/uploads/p/l/40004538_2-parrys-sugar-white-label.jpg",
+      img: "https://c8.alamy.com/comp/2D9YCBF/sugar-bags-pattern-coloured-long-thin-package-on-green-background-2D9YCBF.jpg",
     },
     {
       id: 16,
       type: "amazon",
       name: "masala",
       description:
-        "masala is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The masala company was acquired by Nestlé in 1947",
+        "masala is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 15,
-      img: "https://www.bigbasket.com/media/uploads/p/l/266109_19-maggi-2-minute-instant-noodles-masala.jpg",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfvV7yXErG6DvjVRWB8WSAg46WFzbk26vgDQ&usqp=CAU",
     },
     {
       id: 17,
       type: "amazon",
       name: "shampoo",
       description:
-        "Shampoo is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The masala company was acquired by Nestlé in 1947",
+        "Shampoo is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 30,
-      img: "https://www.bigbasket.com/media/uploads/p/l/40019061_1-clinic-plus-shampoo-strong-long-health.jpg",
+      img: "https://thumbs.dreamstime.com/z/various-brands-shampoo-various-brands-shampoo-including-anti-dandruff-shampoo-192259470.jpg",
     },
     {
       id: 18,
       type: "amazon",
       name: "Salt",
       description:
-        "Salt is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The salt company was acquired by Nestlé in 1947",
+        "Salt is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 20,
-      img: "https://www.bigbasket.com/media/uploads/p/l/241600_5-tata-salt-iodized.jpg",
+      img: "https://static.toiimg.com/photo/msid-83341939/83341939.jpg?1260859",
     },
     {
       id: 19,
       type: "amazon",
       name: "Tea",
       description:
-        "Tea is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Tea company was acquired by Nestlé in 1947",
+        "Tea is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 15,
-      img: "https://www.bigbasket.com/media/uploads/p/l/266569_16-red-label-tea.jpg",
+      img: "https://www.designerpeople.com/wp-content/uploads/2019/08/Tea-bag-design.jpg",
     },
     {
       id: 20,
       type: "amazon",
       name: "detergent",
       description:
-        "Detergent is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The detergent company was acquired by Nestlé in 1947",
+        "Detergent is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 30,
       img: "https://www.bigbasket.com/media/uploads/p/l/1206447_1-rin-detergent-bar.jpg",
     },
@@ -191,16 +191,16 @@ const stores = {
       type: "myntra",
       name: "fruits",
       description:
-        "Fruits is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Fruits company was acquired by Nestlé in 1947",
+        "Fruits is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 100,
-      img: "https://www.bigbasket.com/media/uploads/p/l/40033819_29-fresho-apple-shimla.jpg",
+      img: "https://img.krishijagran.com/media/72212/fruits-in-india.jpg",
     },
     {
       id: 22,
       type: "myntra",
       name: "Oil",
       description:
-        "fortune oil is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The oil company was acquired by Nestlé in 1947",
+        "fortune oil is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 60,
       img: "https://www.bigbasket.com/media/uploads/p/l/1204455_2-fortune-sunflower-refined-oil-sun-lite.jpg",
     },
@@ -209,9 +209,9 @@ const stores = {
       type: "myntra",
       name: "ToothPaste",
       description:
-        "Patanjali is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The patanjali company was acquired by Nestlé in 1947",
+        "Patanjali is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 5,
-      img: "https://www.bigbasket.com/media/uploads/p/l/40000398_1-himalaya-complete-care-toothpaste.jpg",
+      img: "https://media.product.which.co.uk/prod/images/original/gm-e8b1535a-a585-4e4c-8f4d-b7598ad36f2e-maintoothpastex4.jpeg",
     },
     {
       id: 24,
@@ -220,32 +220,32 @@ const stores = {
       description:
         "Bucket is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Bucket company was acquired by Nestlé in 1947",
       price: 10,
-      img: "https://www.bigbasket.com/media/uploads/p/l/40135052_5-princeware-plastic-bucket-for-bathingcleaning-with-handle-frosty-mango-yellow.jpg",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsXxY7DybcWyKzd_Gr3yCo92mbs3UGqvZFGQ&usqp=CAU",
     },
     {
       id: 25,
       type: "myntra",
       name: "Vegetables",
       description:
-        "Vegetables is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Vegetables company was acquired by Nestlé in 1947",
+        "Vegetables is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 20,
-      img: "https://www.bigbasket.com/media/uploads/p/l/10000074-2_2-fresho-cauliflower.jpg",
+      img: "https://blog-images.pharmeasy.in/2021/01/04140120/shutterstock_390988804-1.jpg",
     },
     {
       id: 26,
       type: "myntra",
       name: "FaceWash",
       description:
-        "Himalaya is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The Himalaya company was acquired by Nestlé in 1947",
+        "Himalaya is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 40,
-      img: "https://www.bigbasket.com/media/uploads/p/l/40111644_5-himalaya-tan-removal-orange-face-wash.jpg",
+      img: "http://cdn.shopify.com/s/files/1/0272/4714/9155/products/FCWEUHFSCYWM4YBK_4_1200x1200.jpg?v=1639030488",
     },
     {
       id: 27,
       type: "myntra",
       name: "DryFruits",
       description:
-        "DryFruits is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The DryFruits company was acquired by Nestlé in 1947",
+        "DryFruits is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 150,
       img: "https://www.bigbasket.com/media/uploads/p/l/40018891_6-bb-royal-mixed-dry-fruits.jpg",
     },
@@ -254,7 +254,7 @@ const stores = {
       type: "myntra",
       name: "Towels",
       description:
-        "Towels is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The towels company was acquired by Nestlé in 1947",
+        "Towels is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 120,
       img: "https://www.bigbasket.com/media/uploads/p/l/267629_4-origami-2-ply-kitchen-towels.jpg",
     },
@@ -263,16 +263,16 @@ const stores = {
       type: "myntra",
       name: "Snacks",
       description:
-        "Snacks is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The snacks company was acquired by Nestlé in 1947",
+        "Snacks is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 50,
-      img: "https://www.bigbasket.com/media/uploads/p/l/20002982_1-haldirams-namkeen-salted-peanuts.jpg",
+      img: "https://images.herzindagi.info/image/2022/May/Snacks-For-Chai.jpg",
     },
     {
       id: 30,
       type: "myntra",
       name: "HandWash",
       description:
-        "HandWash is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century. The HandWash company was acquired by Nestlé in 1947",
+        "HandWash is an international brand of seasonings, instant soups, and noodles that originated in Switzerland in the late 19th century.",
       price: 60,
       img: "https://www.bigbasket.com/media/uploads/p/l/40076275_7-godrej-protekt-germ-fighter-liquid-handwash-refill-neem-aloe-vera.jpg",
     },

@@ -6,18 +6,18 @@ import Navbar from "./containers/NavBar";
 import CartList from "./containers/cart/cartList";
 import { Checkout } from "./containers/Checkout";
 import { OrderedMessage } from "./containers/OrderedMessage";
+import { My_Orders } from "./containers/my_orders";
 
 function Routers(props) {
-  const [totalItem, setTotalItem] = useState([]);
+  const [totalItem, setTotalItem] = useState(0);
   const itemsFromCart = JSON.parse(
-    JSON.stringify(localStorage.getItem("CART_ITEMS") || "")
+    JSON.stringify(localStorage.getItem("cartItems"))
   );
   useEffect(() => {
-    if (itemsFromCart && itemsFromCart.length) {
-      setTotalItem(itemsFromCart);
+    if (itemsFromCart) {
+      setTotalItem(itemsFromCart.length);
     }
   }, []);
-  console.log(totalItem.length);
   return (
     <>
       <Navbar totalItem={totalItem} />
@@ -30,6 +30,7 @@ function Routers(props) {
         />
         <Route path="/Checkout" element={<Checkout />} />
         <Route path="/message" element={<OrderedMessage />} />
+        <Route path="/my-orders" element={<My_Orders />} />
       </Routes>
     </>
   );

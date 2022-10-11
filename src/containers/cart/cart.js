@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
-import styles from "../css/Login.module.css";
 import { ButtonGroup } from "react-bootstrap";
 
 let subTotal = 0;
@@ -8,7 +7,7 @@ const Cart = (props) => {
   const [cartItem, setCartItem] = useState({ ...props.item });
   //functions dispatching for incrementing and decrementing item in the cart
   const items = JSON.parse(
-    JSON.stringify(localStorage.getItem("CART_ITEMS") || "")
+    JSON.stringify(localStorage.getItem("cartItems") || "")
   );
   const decrementItemHandle = () => {
     const existingItem = JSON.parse(items).find(
@@ -18,9 +17,9 @@ const Cart = (props) => {
       const currItems = JSON.parse(items).filter(
         (item) => item.id !== props.item.id
       );
-      localStorage.setItem("CART_ITEMS", JSON.stringify(currItems));
+      localStorage.setItem("cartItems", JSON.stringify(currItems));
       props.setCartItems([...currItems]);
-      props.setTotalItem([...currItems]);
+      props.setTotalItem(currItems.length);
       subTotal = 0;
       currItems.forEach((element) => {
         subTotal = subTotal + element.price * element.quantity;
@@ -34,7 +33,7 @@ const Cart = (props) => {
         }
         return item;
       });
-      localStorage.setItem("CART_ITEMS", JSON.stringify(currItems));
+      localStorage.setItem("cartItems", JSON.stringify(currItems));
       props.setCartItems([...currItems]);
       subTotal = 0;
       currItems.forEach((element) => {
@@ -56,7 +55,7 @@ const Cart = (props) => {
       subTotal = subTotal + element.price * element.quantity;
     });
     props.setTotalPrice(subTotal);
-    localStorage.setItem("CART_ITEMS", JSON.stringify(currItems));
+    localStorage.setItem("cartItems", JSON.stringify(currItems));
   };
 
   return (
@@ -102,24 +101,3 @@ const Cart = (props) => {
   );
 };
 export default Cart;
-
-// import { useEffect, useState } from "react";
-// import Item from "../Items/item";
-
-// const Cart = (props) => {
-//   const [cartItems, setCartItems] = useState([]);
-
-//   useEffect(() => {
-//     const items = JSON.parse(localStorage.getItem("ADD_TO_CART") || "");
-//     setCartItems([...items]);
-//   }, []);
-
-//   return (
-//     <div className="card mb-2" style={{ maxWidth: "540" }}>
-//       {cartItems?.map((elem) => {
-//         return <Item item={elem} key={elem.id} cart={false} />;
-//       })}
-//     </div>
-//   );
-// };
-// export default Cart;

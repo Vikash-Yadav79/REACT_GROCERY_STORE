@@ -1,0 +1,8 @@
+.my-orders {
+  display: flex;
+  justify-content: center;
+  height:  50vh;
+  border-color: rgb(230, 229, 229);
+  width: 50%;
+  border-radius: 20px;
+}

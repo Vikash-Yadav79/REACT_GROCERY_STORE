@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Cart from "./cart";
 
-import Button from "react-bootstrap/Button";
 let subTotal;
 const CartList = (props) => {
-  const items = JSON.parse(JSON.stringify(localStorage.getItem("CART_ITEMS")));
+  const items = JSON.parse(JSON.stringify(localStorage.getItem("cartItems")));
   const [CartItems, setCartItems] = useState(JSON.parse(items));
   const [totalPrice, setTotalPrice] = useState(0);
   const navigate = useNavigate();
@@ -17,11 +16,8 @@ const CartList = (props) => {
     setTotalPrice(subTotal);
   }, []);
 
-  const user = JSON.parse(
-    JSON.stringify(localStorage.getItem("loggedUser") || "")
-  );
-  const handleOrder = () => {};
-
+  const user = JSON.parse(JSON.stringify(localStorage.getItem("loggedUser")));
+  
   return (
     <div className="row ms-1" style={{ minHeight: "100vh" }}>
       <div className="col-xs-12 col-sm-1 col-md-2 col-xl-3"></div>
@@ -42,7 +38,7 @@ const CartList = (props) => {
           ))
         ) : (
           <>
-            <h4 className="ms-5">Hi {user.name.split(" ")[0]}!</h4>
+            <h4 className="ms-5">Hi {user.name} !</h4>
             <h3 className="text-center"> Your cart is empty</h3>
             <p className="text-center">
               You can go to home page to view more products

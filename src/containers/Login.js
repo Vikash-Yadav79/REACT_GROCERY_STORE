@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import classes from "./css/Login.module.css";
-import users from "../utils/Users";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -8,7 +7,7 @@ function Login() {
     email: "",
     password: "",
   });
-  const [users, setUsers] = useState([]);
+
   const navigate = useNavigate();
 
   let userData = JSON.parse(
@@ -16,7 +15,6 @@ function Login() {
   );
 
   const LoginHandler = () => {
-    console.log("testing", userData);
     userData = JSON.parse(userData);
     const { email, password } = details;
     const userDetails =
@@ -29,6 +27,24 @@ function Login() {
         return;
       } else {
         localStorage.setItem("loggedUser", JSON.stringify(userDetails));
+        const myOrders = JSON.parse(
+          JSON.stringify(localStorage.getItem("myOrders"))
+        );
+        if (myOrders) {
+          const details = JSON.parse(myOrders);
+          if (!Object.keys(details).includes(userDetails.id)) {
+            localStorage.setItem(
+              "myOrders",
+              JSON.stringify({ ...details, [`${userDetails.id}`]: [] })
+            );
+          }
+        } else {
+          localStorage.setItem(
+            "myOrders",
+            JSON.stringify({ [`${userDetails.id}`]: [] })
+          );
+        }
+        localStorage.setItem("cartItems", JSON.stringify([]));
         navigate("/home");
       }
     } else {
