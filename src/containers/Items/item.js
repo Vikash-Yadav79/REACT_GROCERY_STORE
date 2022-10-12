@@ -1,42 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 function Item(props) {
-  const itemsFromCart = JSON.parse(
+  const [existingItem, setExistingItem] = useState({})
+  const _items = JSON.parse(
     JSON.stringify(localStorage.getItem("cartItems") || "")
   );
-  let existingItem;
-  if (itemsFromCart && itemsFromCart.length) {
-    existingItem = JSON.parse(itemsFromCart).find(
-      (item) => item.id === props.item.id
-    );
-  }
+  const userDetails = JSON.parse(JSON.stringify(localStorage.getItem('loggedUser')));
+  const userId = JSON.parse(userDetails).id;
+
+  const itemsFromCart = JSON.parse(_items)[`${userId}`];
+  useEffect(() => {
+    setExistingItem(itemsFromCart.find(_item => _item.id === props.item.id && _item.type === props.item.type))
+  }, []);
   const addItemToCart = (item) => {
+    props.setTotalItem();
     const getCartItem = JSON.parse(
       JSON.stringify(localStorage.getItem("cartItems"))
-    );
-    const orderDetails = JSON.parse(
-      JSON.stringify(localStorage.getItem("myOrders"))
     );
     const userDetails = JSON.parse(
       JSON.stringify(localStorage.getItem("loggedUser"))
     );
     const userId = JSON.parse(userDetails).id;
-    const items = JSON.parse(getCartItem);
-    const myOrders = JSON.parse(orderDetails);
+    const _items = JSON.parse(getCartItem);
     const itemToCart = {
       ...item,
       quantity: 1,
     };
-    if (items) {
-      localStorage.setItem("cartItems", JSON.stringify([...items, itemToCart]));
-      props.setTotalItem(items.length + 1);
-    } else {
-      localStorage.setItem("cartItems", JSON.stringify([itemToCart]));
-      props.setTotalItem(items.length + 1);
-    }
+    const _myItems = [..._items[`${userId}`]];
+    _myItems.push({...itemToCart});
+    const setCartDetails = {..._items, [`${userId}`]: [..._myItems]};
+    localStorage.setItem("cartItems", JSON.stringify(setCartDetails));
+    setExistingItem({...itemToCart})
   };
+
+
 
   return (
     <>
@@ -62,7 +61,7 @@ function Item(props) {
               Add To Cart
             </Button>
           ) : (
-            <Button variant="success" onClick={() => addItemToCart(props.item)}>
+            <Button variant="success" disabled>
               Added To Cart
             </Button>
           )}

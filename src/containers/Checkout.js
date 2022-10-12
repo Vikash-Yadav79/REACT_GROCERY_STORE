@@ -4,6 +4,9 @@ import { CoupounModal } from "./Coupoun";
 
 export const Checkout = () => {
   const [cartItems, setCartItems] = useState([]);
+  const userDetails = JSON.parse(JSON.stringify(localStorage.getItem('loggedUser')));
+  const _items = JSON.parse(JSON.stringify(localStorage.getItem("cartItems")));
+  const userId = JSON.parse(userDetails).id;
   const [itemTotalPrice, setItemTotalPrice] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [show, setShow] = useState(false);
@@ -11,7 +14,7 @@ export const Checkout = () => {
   const [coupoun, setCoupoun] = useState("0% Discount");
   const navigate = useNavigate();
   useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("cartItems") || "");
+    const items = JSON.parse(_items)[`${userId}`]
     let totalPrice = 0;
     items.map((item) => (totalPrice += item.price * item.quantity));
     setItemTotalPrice(totalPrice);
@@ -20,7 +23,7 @@ export const Checkout = () => {
 
   useEffect(() => {
     const value = JSON.parse(JSON.stringify(localStorage.getItem("Coupoun")));
-    setCoupoun(`${value}% Discount`);
+    setCoupoun(`${value ? value : 0}% Discount`);
     if (itemTotalPrice) {
       setTotalPrice(itemTotalPrice - itemTotalPrice * (Number(value) / 100));
     }
@@ -37,13 +40,15 @@ export const Checkout = () => {
       JSON.stringify(localStorage.getItem("loggedUser"))
     );
     const userId = JSON.parse(userDetails).id;
-    const myOrders = JSON.parse(orderDetails);
-    const _cartItems = JSON.parse(cartItems);
-    const items = [..._cartItems];
-    const setOrderDetails = { ...myOrders, [`${userId}`]: [...items] };
+    const orders = JSON.parse(orderDetails);
+    const myOrders = orders[`${userId}`];
+    const _cartItems = JSON.parse(cartItems)[`${userId}`];
+    const items = [...myOrders,..._cartItems];
+    const setOrderDetails = { ...orders, [`${userId}`]: [...items] };
     localStorage.setItem("myOrders", JSON.stringify(setOrderDetails));
     navigate("/message");
-    localStorage.setItem("cartItems", JSON.stringify([]));
+    const setCartDetails = {...JSON.parse(_items), [`${userId}`]: []}
+    localStorage.setItem("cartItems", JSON.stringify(setCartDetails));
     localStorage.setItem("Coupoun", 0);
   };
   return (

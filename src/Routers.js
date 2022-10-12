@@ -9,24 +9,19 @@ import { OrderedMessage } from "./containers/OrderedMessage";
 import { My_Orders } from "./containers/my_orders";
 
 function Routers(props) {
-  const [totalItem, setTotalItem] = useState(0);
-  const itemsFromCart = JSON.parse(
-    JSON.stringify(localStorage.getItem("cartItems"))
-  );
-  useEffect(() => {
-    if (itemsFromCart) {
-      setTotalItem(itemsFromCart.length);
-    }
-  }, []);
+  const [totalItem, setTotalItem] = useState(false);
+  const setLength = () => {
+    setTotalItem(true);
+  }
   return (
     <>
-      <Navbar totalItem={totalItem} />
+      <Navbar totalItem={totalItem} setTotalItem={() => setTotalItem(false)} />
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Home setTotalItem={setTotalItem} />} />
+        <Route path="/home" element={<Home setTotalItem={() => setLength()} />} />
         <Route
           path="/cart"
-          element={<CartList setTotalItem={setTotalItem} />}
+          element={<CartList setTotalItem={() => setLength()} />}
         />
         <Route path="/Checkout" element={<Checkout />} />
         <Route path="/message" element={<OrderedMessage />} />

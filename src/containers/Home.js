@@ -54,7 +54,7 @@ function Home(props) {
           </Dropdown.Menu>
         </Dropdown>
       </div>
-      <ItemList data={data} setTotalItem={props.setTotalItem} />
+      <ItemList data={data} setTotalItem={() => props.setTotalItem()} />
     </>
   );
 }

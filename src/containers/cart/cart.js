@@ -2,60 +2,49 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { ButtonGroup } from "react-bootstrap";
 
-let subTotal = 0;
 const Cart = (props) => {
   const [cartItem, setCartItem] = useState({ ...props.item });
-  //functions dispatching for incrementing and decrementing item in the cart
-  const items = JSON.parse(
-    JSON.stringify(localStorage.getItem("cartItems") || "")
+  const userDetails = JSON.parse(JSON.stringify(localStorage.getItem('loggedUser')));
+  const userId = JSON.parse(userDetails).id;
+  const _items = JSON.parse(
+    JSON.stringify(localStorage.getItem("cartItems"))
   );
+  const items = JSON.parse(_items)[`${userId}`];
   const decrementItemHandle = () => {
-    const existingItem = JSON.parse(items).find(
-      (item) => item.id === props.item.id
+    const _myItems = JSON.parse(
+      JSON.stringify(localStorage.getItem("cartItems"))
     );
-    if (existingItem && existingItem.quantity <= 1) {
-      const currItems = JSON.parse(items).filter(
-        (item) => item.id !== props.item.id
-      );
-      localStorage.setItem("cartItems", JSON.stringify(currItems));
-      props.setCartItems([...currItems]);
-      props.setTotalItem(currItems.length);
-      subTotal = 0;
-      currItems.forEach((element) => {
-        subTotal = subTotal + element.price * element.quantity;
-      });
-      props.setTotalPrice(subTotal);
-    } else {
-      const currItems = JSON.parse(items).map((item) => {
-        if (item.id === props.item.id) {
-          item.quantity = item.quantity - 1;
-          setCartItem(item);
-        }
-        return item;
-      });
-      localStorage.setItem("cartItems", JSON.stringify(currItems));
-      props.setCartItems([...currItems]);
-      subTotal = 0;
-      currItems.forEach((element) => {
-        subTotal = subTotal + element.price * element.quantity;
-      });
-      props.setTotalPrice(subTotal);
+    const currItems = JSON.parse(_myItems)[`${userId}`].map((item) => {
+      if (item.id === props.item.id) {
+        item.quantity = item.quantity - 1;
+        setCartItem(item);
+      }
+      return item;
+    });
+    const index = currItems.findIndex(item => item.quantity === 0);
+    if (index > -1) {
+      currItems.splice(index, 1);
     }
+    const setDetails = {...JSON.parse(_items), [`${userId}`]: [...currItems]};
+    localStorage.setItem('cartItems', JSON.stringify(setDetails));
+    props.setCartItems([...currItems]);
+    props.setTotalItem();
   };
   const incrementItemHandle = () => {
-    const currItems = JSON.parse(items).map((item) => {
+    const _myItems = JSON.parse(
+      JSON.stringify(localStorage.getItem("cartItems"))
+    );
+    const currItems = JSON.parse(_myItems)[`${userId}`].map((item) => {
       if (item.id === props.item.id) {
         item.quantity = item.quantity + 1;
         setCartItem(item);
       }
       return item;
     });
-    subTotal = 0;
-    currItems.forEach((element) => {
-      subTotal = subTotal + element.price * element.quantity;
-    });
-    props.setTotalPrice(subTotal);
-    localStorage.setItem("cartItems", JSON.stringify(currItems));
+    const setDetails = {...JSON.parse(_items), [`${userId}`]: [...currItems]};
+    localStorage.setItem('cartItems', JSON.stringify(setDetails));
+    props.setCartItems([...currItems]);
+    props.setTotalItem();
   };
 
   return (

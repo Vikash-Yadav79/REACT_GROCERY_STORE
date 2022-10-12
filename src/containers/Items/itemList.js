@@ -7,7 +7,7 @@ function itemList(props) {
       {props.data?.map((elem) => {
         return (
           <div key={elem.id}>
-            <Item item={elem} setTotalItem={props.setTotalItem} />
+            <Item item={elem} setTotalItem={() => props.setTotalItem()} />
           </div>
         );
       })}

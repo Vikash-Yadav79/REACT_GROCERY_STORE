@@ -1,21 +1,33 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import './myOrders.css';
 
 const Navbar = (props) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [cartLength, setCartLength] = useState(0);
   const [userDetails, setUserDetails] = useState({});
+  const _items = JSON.parse(JSON.stringify(localStorage.getItem('cartItems')));
+  const user = JSON.parse(JSON.stringify(localStorage.getItem("loggedUser"))) || {};
 
   useEffect(() => {
     if (location.pathname !== "/") {
-      const user =
-        JSON.parse(JSON.stringify(localStorage.getItem("loggedUser"))) || {};
       if (Object.keys(user).length) {
         setUserDetails({ ...JSON.parse(user) });
       }
+      const userId = JSON.parse(user).id;
+      setCartLength(JSON.parse(_items)[`${userId}`].length);
+      props.setTotalItem();
+    }else if (props.totalItem) {
+      if (Object.keys(user).length) {
+        setUserDetails({ ...JSON.parse(user) });
+      }
+      const userId = JSON.parse(user).id;
+      setCartLength(JSON.parse(_items)[`${userId}`].length);
+      props.setTotalItem();
     }
-  }, [location]);
+  }, [location, props.totalItem]);
   const goToCart = () => {
     navigate("/cart");
   };
@@ -23,7 +35,7 @@ const Navbar = (props) => {
   return (
     <nav className="navbar navbar-expand-lg bg-light ">
       <div className="container-fluid">
-        <a className="navbar-brand" onClick={() => navigate("/home")}>
+        <a className="navbar-brand fw-bold cursor-pointer" onClick={() => navigate("/home")}>
           Grocery Store
         </a>
 
@@ -59,12 +71,12 @@ const Navbar = (props) => {
                 </DropdownButton>
                 <div>
                   <i
-                    className="fa fa-shopping-cart"
+                    className="fa fa-shopping-cart cursor-pointer"
                     style={{ fontSize: "37px", color: "black" }}
                     onClick={goToCart}
                   />
                   <span className="total_item">
-                    {props.totalItem > 0 && props.totalItem}
+                    {cartLength}
                   </span>
                 </div>
               </div>

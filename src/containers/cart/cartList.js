@@ -5,16 +5,18 @@ import Cart from "./cart";
 let subTotal;
 const CartList = (props) => {
   const items = JSON.parse(JSON.stringify(localStorage.getItem("cartItems")));
-  const [CartItems, setCartItems] = useState(JSON.parse(items));
+  const userDetails = JSON.parse(JSON.stringify(localStorage.getItem('loggedUser')));
+  const userId = JSON.parse(userDetails).id;
+  const [CartItems, setCartItems] = useState(JSON.parse(items)[`${userId}`]);
   const [totalPrice, setTotalPrice] = useState(0);
   const navigate = useNavigate();
   useEffect(() => {
     subTotal = 0;
-    JSON.parse(items).forEach((element) => {
+    CartItems.forEach((element) => {
       subTotal = subTotal + element.price * element.quantity;
     });
     setTotalPrice(subTotal);
-  }, []);
+  }, [CartItems]);
 
   const user = JSON.parse(JSON.stringify(localStorage.getItem("loggedUser")));
   
@@ -27,12 +29,14 @@ const CartList = (props) => {
           {CartItems.length} {CartItems.length > 1 ? `Items` : `Item`}{" "}
         </p>
         {CartItems.length > 0 ? (
-          CartItems.map((item) => (
+          CartItems.map((item, index) => (
             <Cart
-              key={item.id}
+              key={`${item.id + item.type}`}
               item={item}
-              setCartItems={setCartItems}
-              setTotalItem={props.setTotalItem}
+              setCartItems={(items) => {
+                setCartItems([...items]);
+              }}
+              setTotalItem={() => props.setTotalItem()}
               setTotalPrice={setTotalPrice}
             />
           ))

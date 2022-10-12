@@ -20,7 +20,6 @@ export const My_Orders = () => {
   }, []);
 
   const cancelOrder = (item) => {
-    console.log(item, "item");
     const _myItems = [...myItems];
     const index = _myItems.findIndex(
       (_item) => _item.id === item.id && _item.type === item.type
@@ -47,18 +46,24 @@ export const My_Orders = () => {
               key={index}
               style={{
                 width: "18rem",
-                height: "70vh",
-                marginRight: "20px",
+                height: "45vh",
+                marginLeft: "40px",
                 marginTop: "20px",
               }}
             >
-              <Card.Img variant="top" src={item.img} />
+              <Card.Img
+                style={{ height: "8rem" }}
+                variant="top"
+                src={item.img}
+              />
               <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
                   {item.type}
                 </Card.Subtitle>
-                <Card.Text>{item.description}</Card.Text>
+                <Card.Text className="text-truncate">
+                  {item.description}
+                </Card.Text>
                 <button
                   className="btn btn-danger"
                   onClick={() => cancelOrder(item)}

@@ -44,7 +44,23 @@ function Login() {
             JSON.stringify({ [`${userDetails.id}`]: [] })
           );
         }
-        localStorage.setItem("cartItems", JSON.stringify([]));
+        const cartItems = JSON.parse(
+          JSON.stringify(localStorage.getItem("cartItems"))
+        );
+        if (cartItems) {
+          const details = JSON.parse(cartItems);
+          if (!Object.keys(details).includes(userDetails.id)) {
+            localStorage.setItem(
+              "cartItems",
+              JSON.stringify({ ...details, [`${userDetails.id}`]: [] })
+            );
+          }
+        } else {
+          localStorage.setItem(
+            "cartItems",
+            JSON.stringify({ [`${userDetails.id}`]: [] })
+          );
+        }
         navigate("/home");
       }
     } else {
